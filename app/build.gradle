@@ -1,42 +1,74 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.aa.demo"
-        minSdkVersion 18
-        targetSdkVersion 28
+        minSdkVersion 19
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     dataBinding {
         enabled = true
     }
+    lintOptions {
+        quiet true
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility = "1.7"
+        targetCompatibility = "1.7"
+    }
+
+}
+aspectjx {
+    //指定只对含有关键字'universal-image-loader', 'AspectJX-Demo/library'的库进行织入扫描，忽略其他库，提升编译效率
+//    includeJarFilter 'universal-image-loader', 'AspectJX-Demo/library'
+//    excludeJarFilter '.jar'
+//    ajcArgs '-Xlint:warning'
 }
 
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+   // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test:runner:1.2.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.github.hotchemi:permissionsdispatcher:2.1.3'
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.1.3'
-    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'androidx.percentlayout:percentlayout:1.0.0'
 
 
 //    implementation 'com.android.support:support-annotations:latest.integration'
 
     implementation project(":annotation_lib")
-    annotationProcessor project(":annotation_lib")
+//    annotationProcessor project(":annotation_lib")
+
+
+    // aspectj的例子
+    implementation project(':aspectjdemo')
 }

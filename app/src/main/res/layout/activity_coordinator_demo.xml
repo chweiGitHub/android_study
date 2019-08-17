@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="floatClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="myAdapter"
+            type="com.emdd.emdd_android.coordinator_demo.DemoAdapter" />
+
+        <variable
+            name="myLayoutManager"
+            type="androidx.recyclerview.widget.RecyclerView.LayoutManager" />
+
+    </data>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#cccccc">-->
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#09f0cc"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{myAdapter}"
+                app:layoutManager="@{myLayoutManager}"
+                />
+
+            <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+                <!--app:layout_behavior="com.emdd.emdd_android.coordinator_demo.ScrollAwareFABBehavior"-->
+                <!--android:id="@+id/btn_float"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:onClick="@{floatClick}"-->
+                <!--android:shadowColor="#a09000"-->
+                <!--android:src="@mipmap/ic_launcher"-->
+                <!--app:borderWidth="10dp"-->
+                <!--app:fabCustomSize="50dp"-->
+                <!--app:fabSize="auto"-->
+                <!--app:layout_anchor="@id/list_view"-->
+                <!--app:layout_anchorGravity="right|center_vertical"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--tools:ignore="MissingConstraints" />-->
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <!--<Button-->
+            <!--android:id="@+id/btn_test"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="@{floatClick}"-->
+            <!--android:text="test click"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+
+        <!--<FrameLayout-->
+            <!--android:id="@+id/snack_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/colorAccent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/btn_test"></FrameLayout>-->
+
+
+
+
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+</layout>

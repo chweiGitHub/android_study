@@ -1,48 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <data>
 
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <Button
+        android:id="@+id/btn_annotation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:onClick="toAnnotationDemoPage"
+        android:text="annotation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toFilePage"
+        android:text="file"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_annotation" />
+
+    <Button
+        android:id="@+id/btn_mvvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toMvvmPage"
+        android:text="DataBinding-Demo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_file" />
 
 
-        <Button
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="annotation"
-            android:id="@+id/btn_annotation"
-            android:onClick="toAnnotationDemoPage" />
+    <Button
+        android:id="@+id/btn_CoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toCoordinatorLayoutPage"
+        android:text="CoordinatorLayout-Demo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_mvvm" />
 
-        <Button
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_annotation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="file"
-            android:id="@+id/btn_file"
-            android:onClick="toFilePage" />
+    <Button
+        android:id="@+id/btn_aspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toAspectDemoPage"
+        android:text="AspectJ-Demo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CoordinatorLayout" />
 
-        <Button
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_file"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DataBinding-Demo"
-            android:id="@+id/btn_mvvm"
-            android:onClick="toMvvmPage" />
+    <Button
+        android:id="@+id/btn_binder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toServicePage"
+        android:text="service"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_aspect" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

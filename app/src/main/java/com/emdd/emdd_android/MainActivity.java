@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity4;
 import com.emdd.emdd_android.databinding.ActivityMainBinding;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
+import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
+import com.emdd.emdd_android.service.ServiceDemoActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,10 +25,20 @@ public class MainActivity extends AppCompatActivity {
     public void toMvvmPage(View v){
         startActivity(new Intent(MainActivity.this, DataBindDemoActivity.class));
     }
+    public void toCoordinatorLayoutPage(View v){
+        startActivity(new Intent(MainActivity.this, CoordinatorActivity4.class));
+    }
+    public void toAspectDemoPage(View v){
+        startActivity(new Intent(MainActivity.this, AspectjDemoActivity.class));
+    }
+    public void toServicePage (View v){
+        startActivity(new Intent(MainActivity.this, ServiceDemoActivity.class));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding  = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setContentView(R.layout.activity_main);
+      //  ActivityMainBinding binding  = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
     }
 }

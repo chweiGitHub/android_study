@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <Button
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bind"
+            android:id="@+id/btn_bind"
+            android:onClick="bind" />
+
+        <Button
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_bind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ubind"
+            android:id="@+id/btn_ubind"
+            android:onClick="ubind" />
+
+        <Button
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_ubind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="getMsg"
+            android:id="@+id/btn_getMsg"
+            android:onClick="getMsg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

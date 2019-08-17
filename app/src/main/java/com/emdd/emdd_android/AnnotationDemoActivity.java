@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.emdd.annotation_lib.demo.PrintLog;
 import com.emdd.emdd_android.annotation.AutoWired;
 import com.emdd.emdd_android.annotation.AutoWiredProcess;
 import com.emdd.emdd_android.annotation.test_bean.Goods;
@@ -32,4 +33,6 @@ public class AnnotationDemoActivity extends AppCompatActivity {
         g2.print();
         g3.print();
     }
+
+    private String testAnnotation;
 }

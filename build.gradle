@@ -2,13 +2,18 @@
 
 buildscript {
     repositories {
+        mavenLocal()
         google()
-        jcenter()
-        
+        jcenter(){
+            url 'http://jcenter.bintray.com'
+        }
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
-        
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        // https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx
+//        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.1'
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -17,10 +22,19 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
-        
+        jcenter(){
+            url 'http://jcenter.bintray.com'
+        }
+    }
+    configurations.all {
+        resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
+        }
     }
 }
+//ext {
+//    supportLibVersion = '28.0.1'  // variable that can be referenced to keep support libs consistent
+//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

@@ -37,6 +37,15 @@
         <activity android:name=".AnnotationDemoActivity"/>
         <activity android:name=".FileActivity"/>
         <activity android:name=".mvvm.DataBindDemoActivity"/>
+        <activity android:name=".coordinator_demo.CoordinatorActivity" />
+        <activity android:name=".coordinator_demo.CoordinatorActivity2" />
+        <activity android:name=".coordinator_demo.CoordinatorActivity3" />
+        <activity android:name=".coordinator_demo.CoordinatorActivity4" />
+        <activity android:name=".section_demo.AspectjDemoActivity" />
+        <activity android:name=".service.ServiceDemoActivity" />
+        <activity android:name=".reflect.ReflectDemoActivity" />
+
+        <service android:name=".service.DemoService" />
     </application>
 
 </manifest>
