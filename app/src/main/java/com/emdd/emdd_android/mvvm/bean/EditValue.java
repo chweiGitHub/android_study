@@ -8,8 +8,6 @@ import com.emdd.emdd_android.BR;
 public class EditValue  extends BaseObservable {
 
 
-
-
     private  String editValue;
 
     @Bindable

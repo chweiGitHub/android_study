@@ -9,6 +9,8 @@ import com.emdd.emdd_android.annotation.AutoWired;
 import com.emdd.emdd_android.annotation.AutoWiredProcess;
 import com.emdd.emdd_android.annotation.test_bean.Goods;
 
+import java.util.concurrent.ThreadFactory;
+
 public class AnnotationDemoActivity extends AppCompatActivity {
 
     @AutoWired

@@ -17,7 +17,6 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
-
 public class CustomAspect {
 
     @Pointcut("execution(* com.emdd.emdd_android.section_demo.AspectjDemoActivity.click1(..))")
@@ -33,10 +32,8 @@ public class CustomAspect {
         System.out.println("joinPoint.getTarget()-------> " + joinPoint.getTarget());
         System.out.println("joinPoint.getArgs()-------> " + joinPoint.getArgs());
 
-
         Toast.makeText(getContext(joinPoint.getThis()), " 点击了按钮1", Toast.LENGTH_SHORT).show();
     }
-
 
     @Pointcut("call(* com.emdd.emdd_android.section_demo.AspectjDemoActivity.click2(..))")
     public void callDemo() {
@@ -100,6 +97,4 @@ public class CustomAspect {
         System.out.println("joinPoint.getArgs()-------> " + joinPoint.getArgs());
 
     }
-
-
 }
