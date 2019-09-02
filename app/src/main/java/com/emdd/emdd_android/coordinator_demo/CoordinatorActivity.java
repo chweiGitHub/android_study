@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.emdd.emdd_android.R;
 import com.emdd.emdd_android.databinding.ActivityCoordinatorDemoBinding;
@@ -21,23 +22,24 @@ import java.util.List;
 public class CoordinatorActivity extends AppCompatActivity
         implements View.OnClickListener {
 
-    ActivityCoordinatorDemoBinding binding;
-
-    List<PhoneInfo> phoneInfos = new ArrayList<>();
-    DemoAdapter adapter;
+    RecyclerView recyclerView;
+    RecyclerAdapter myAdapter;
+    List<String> list;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_coordinator_demo);
-        binding.setFloatClick(this);
+        setContentView(R.layout.activity_coordinator_demo);
+        recyclerView  = findViewById(R.id.recycler_view);
 
-        for (int i = 0; i < 30; i++) {
-            phoneInfos.add(new PhoneInfo(i + 1000, String.format("第%d项", (i + 1000))));
+        list  = new ArrayList<>();
+        for (int i =0; i < 30; i ++){
+            list.add("item " +i);
         }
-        binding.setMyLayoutManager(new LinearLayoutManager(this));
-        adapter = new DemoAdapter(phoneInfos);
-        binding.setMyAdapter(adapter);
+        myAdapter  = new RecyclerAdapter(list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
+
     }
 
     @Override
