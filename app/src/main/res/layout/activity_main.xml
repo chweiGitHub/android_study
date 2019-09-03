@@ -51,6 +51,17 @@
         app:layout_constraintTop_toBottomOf="@id/btn_mvvm" />
 
     <Button
+        android:id="@+id/btn_CoordinatorLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toCoordinatorLayoutPage2"
+        android:text="CoordinatorLayout-Demo2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_CoordinatorLayout" />
+
+
+    <Button
         android:id="@+id/btn_aspect"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +69,7 @@
         android:text="AspectJ-Demo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_CoordinatorLayout" />
+        app:layout_constraintTop_toBottomOf="@id/btn_CoordinatorLayout2" />
 
     <Button
         android:id="@+id/btn_binder"

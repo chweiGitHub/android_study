@@ -5,22 +5,22 @@
     android:layout_height="match_parent">
 
     <!--<FrameLayout-->
-        <!--android:layout_width="match_parent" -->
-        <!--android:layout_height="wrap_content">-->
+    <!--android:layout_width="match_parent" -->
+    <!--android:layout_height="wrap_content">-->
 
 
     <!--</FrameLayout>-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:background="#fff"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#fff">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:minHeight="80dp"
             android:background="#00000000"
+            android:minHeight="80dp"
             app:layout_scrollFlags="scroll|snap" />
 
         <!--scroll enterAlways enterAlwaysCollapsed exitUntilCollapsed snap -->
@@ -37,22 +37,22 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-<!--
-    通过滚动视图中设置的 layout_behavior来触发设置了app:layout_scrollFlags属性的View行为。
-    app:layout_scrollFlags的几个常用的值（可以多个一起使用）：
-    （1）scroll:
-            向上滑动，先滑动APPBarLayout的子View，滑完之后再开始滑动滚动视图。
-            向下滑动的时候，先滑动滚动视图，滚动视图滑完之后再滑动AppBarLayout的子View。
-    （2）enterAlways： 必须带上scroll不然没有效果。
-            向下滚动时，先滚动的是AppBarLayout的子View，子View滚动完成之后才会滑动滚动视图。
-            向上滚动时，和scroll一样。
-    （3）enterAlwaysCollapsed: 是为了辅助enterAlways而存在的。
-            向下滑动时，先滚动AppBarLayout的子View到子View的最小高度，然后再滚动滚动视图，滚动视图滚动完成之后再继续滚动AppBarlayout的子View 直到完全显示。
-            向上滚动时，和scroll一样。
-    （4）exitUntilCollapsed：和scroll一起使用。
-            向上滚动时，先滚动AppBarLayout的子View到最小高度，然后滚动滚动视图,滚动完成AppBarLayout的子View始终以最小高度显示。
-            向下滚动时，先滚动滚动视图，再滚动APPBarLayout的子View。
-    （5）snap：和scroll一起使用。让滑动有一定的吸附效果。
-            向上滑动时，先滑动AppBarLayout的子View，滑到一半后它会自动滑完AppBarLayout的子View，然后再滑动滚动视图。
-            向下滑动时u，先滚动AppBarLayout的子View，滚到一半会自动展开，然后再滑动滚动视图。
--->
+    <!--
+        通过滚动视图中设置的 layout_behavior来触发设置了app:layout_scrollFlags属性的View行为。
+        app:layout_scrollFlags的几个常用的值（可以多个一起使用）：
+        （1）scroll:
+                向上滑动，先滑动APPBarLayout的子View，滑完之后再开始滑动滚动视图。
+                向下滑动的时候，先滑动滚动视图，滚动视图滑完之后再滑动AppBarLayout的子View。
+        （2）enterAlways： 必须带上scroll不然没有效果。
+                向下滚动时，先滚动的是AppBarLayout的子View，子View滚动完成之后才会滑动滚动视图。
+                向上滚动时，和scroll一样。
+        （3）enterAlwaysCollapsed: 是为了辅助enterAlways而存在的。
+                向下滑动时，先滚动AppBarLayout的子View到子View的最小高度，然后再滚动滚动视图，滚动视图滚动完成之后再继续滚动AppBarlayout的子View 直到完全显示。
+                向上滚动时，和scroll一样。
+        （4）exitUntilCollapsed：和scroll一起使用。
+                向上滚动时，先滚动AppBarLayout的子View到最小高度，然后滚动滚动视图,滚动完成AppBarLayout的子View始终以最小高度显示。
+                向下滚动时，先滚动滚动视图，再滚动APPBarLayout的子View。
+        （5）snap：和scroll一起使用。让滑动有一定的吸附效果。
+                向上滑动时，先滑动AppBarLayout的子View，滑到一半后它会自动滑完AppBarLayout的子View，然后再滑动滚动视图。
+                向下滑动时u，先滚动AppBarLayout的子View，滚到一半会自动展开，然后再滑动滚动视图。
+    -->

@@ -9,9 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.emdd.emdd_android.R;
-
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +25,7 @@ public class CoordinatorActivity extends AppCompatActivity
         // activity_coordinator_demo
         // activity_coordinator_demo2
         // activity_coordinator_demo_3
-        setContentView(R.layout.activity_coordinator_demo_3);
+        setContentView(R.layout.activity_coordinator_demo_4);
         recyclerView  = findViewById(R.id.recycler_view);
 
         list  = new ArrayList<>();
@@ -39,7 +36,6 @@ public class CoordinatorActivity extends AppCompatActivity
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
-        System.out.println(String.format("%.2f", 0.876));
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity;
+import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
 import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
 import com.emdd.emdd_android.service.ServiceDemoActivity;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void toCoordinatorLayoutPage(View v){
         startActivity(new Intent(MainActivity.this, CoordinatorActivity.class));
+    }
+    public void toCoordinatorLayoutPage2(View v){
+        startActivity(new Intent(MainActivity.this, CoordinatorActivity2.class));
     }
     public void toAspectDemoPage(View v){
         startActivity(new Intent(MainActivity.this, AspectjDemoActivity.class));
