@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent" -->
+    <!--android:layout_height="wrap_content">-->
+
+
+    <!--</FrameLayout>-->
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:minHeight="80dp"-->
+        <!--android:background="#00000000"-->
+        <!--app:layout_scrollFlags="scroll|snap" />-->
+
+        <!--&lt;!&ndash;scroll enterAlways enterAlwaysCollapsed exitUntilCollapsed snap &ndash;&gt;-->
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="#000" />-->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#aa460b"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:background="@mipmap/food02"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_overlapTop="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--
+        通过滚动视图中设置的 layout_behavior来触发设置了app:layout_scrollFlags属性的View行为。
+        app:layout_scrollFlags的几个常用的值（可以多个一起使用）：
+        （1）scroll:
+                向上滑动，先滑动APPBarLayout的子View，滑完之后再开始滑动滚动视图。
+                向下滑动的时候，先滑动滚动视图，滚动视图滑完之后再滑动AppBarLayout的子View。
+        （2）enterAlways： 必须带上scroll不然没有效果。
+                向下滚动时，先滚动的是AppBarLayout的子View，子View滚动完成之后才会滑动滚动视图。
+                向上滚动时，和scroll一样。
+        （3）enterAlwaysCollapsed: 是为了辅助enterAlways而存在的。
+                向下滑动时，先滚动AppBarLayout的子View到子View的最小高度，然后再滚动滚动视图，滚动视图滚动完成之后再继续滚动AppBarlayout的子View 直到完全显示。
+                向上滚动时，和scroll一样。
+        （4）exitUntilCollapsed：和scroll一起使用。
+                向上滚动时，先滚动AppBarLayout的子View到最小高度，然后滚动滚动视图,滚动完成AppBarLayout的子View始终以最小高度显示。
+                向下滚动时，先滚动滚动视图，再滚动APPBarLayout的子View。
+        （5）snap：和scroll一起使用。让滑动有一定的吸附效果。
+                向上滑动时，先滑动AppBarLayout的子View，滑到一半后它会自动滑完AppBarLayout的子View，然后再滑动滚动视图。
+                向下滑动时u，先滚动AppBarLayout的子View，滚到一半会自动展开，然后再滑动滚动视图。
+
+
+        app:layout_collapseMode: 折叠的模式
+        （1）pin:固定模式，折叠后设置该属性的view固定在顶部
+        （2）parallax:视差模式，折叠的过程中该view的折叠与正常的view有视差。
+
+        app:layout_collapseParallaxMultiplier：
+        值越大相差的速度越大，值越小，相差的速度越小，为0速度是一致的； 为1 设置该属性的view速度为0，没有滑动效果，类似滚动视图直接覆盖该view的效果。
+
+        app:behavior_overlapTop="100dp": 滚动视图相对于AppBarLayout向上的偏移量
+
+
+
+    -->

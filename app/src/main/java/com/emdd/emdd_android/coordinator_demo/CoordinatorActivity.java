@@ -2,20 +2,16 @@ package com.emdd.emdd_android.coordinator_demo;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.emdd.emdd_android.R;
-import com.emdd.emdd_android.databinding.ActivityCoordinatorDemoBinding;
-import com.emdd.emdd_android.mvvm.adapter.PhoneAdapter;
-import com.emdd.emdd_android.mvvm.bean.PhoneInfo;
-import com.google.android.material.snackbar.Snackbar;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +25,10 @@ public class CoordinatorActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coordinator_demo);
+        // activity_coordinator_demo
+        // activity_coordinator_demo2
+        // activity_coordinator_demo_3
+        setContentView(R.layout.activity_coordinator_demo_3);
         recyclerView  = findViewById(R.id.recycler_view);
 
         list  = new ArrayList<>();
@@ -40,6 +39,7 @@ public class CoordinatorActivity extends AppCompatActivity
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
 
+        System.out.println(String.format("%.2f", 0.876));
     }
 
     @Override

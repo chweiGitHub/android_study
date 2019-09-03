@@ -8,10 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity;
-import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
-import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity3;
-import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity4;
-import com.emdd.emdd_android.databinding.ActivityMainBinding;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
 import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
 import com.emdd.emdd_android.service.ServiceDemoActivity;
