@@ -79,6 +79,8 @@ public class CoordinatorActivity2 extends AppCompatActivity
         myAdapter = new RecyclerAdapter(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapter);
+
+        System.out.println("输出 111111");
     }
 
     @Override
