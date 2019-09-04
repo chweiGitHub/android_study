@@ -1,7 +1,6 @@
 package com.emdd.emdd_android.coordinator_demo;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,11 +16,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.emdd.emdd_android.R;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@RequiresApi(api = Build.VERSION_CODES.M)
 public class CoordinatorActivity2 extends AppCompatActivity
         implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
 
@@ -61,7 +57,6 @@ public class CoordinatorActivity2 extends AppCompatActivity
                 } else {
                     behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
                     System.out.println("隐藏");
-
                 }
             }
         });
