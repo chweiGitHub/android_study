@@ -44,6 +44,7 @@
         <activity android:name=".section_demo.AspectjDemoActivity" />
         <activity android:name=".service.ServiceDemoActivity" />
         <activity android:name=".reflect.ReflectDemoActivity" />
+        <activity android:name=".string.StringActivity" />
 
         <service android:name=".service.DemoService" />
     </application>

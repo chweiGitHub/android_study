@@ -12,6 +12,7 @@ import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
 import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
 import com.emdd.emdd_android.service.ServiceDemoActivity;
+import com.emdd.emdd_android.string.StringActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,11 +38,14 @@ public class MainActivity extends AppCompatActivity {
     public void toServicePage (View v){
         startActivity(new Intent(MainActivity.this, ServiceDemoActivity.class));
     }
+    public void toStringPage (View v){
+        System.out.println("跳转toStringPage");
+        startActivity(new Intent(MainActivity.this, StringActivity.class));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       //  ActivityMainBinding binding  = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
     }
 }
