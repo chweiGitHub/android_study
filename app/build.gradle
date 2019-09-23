@@ -33,11 +33,11 @@ android {
         abortOnError false
     }
 
-    compileOptions {
-        sourceCompatibility = "1.7"
-        targetCompatibility = "1.7"
-    }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 aspectjx {
     //指定只对含有关键字'universal-image-loader', 'AspectJX-Demo/library'的库进行织入扫描，忽略其他库，提升编译效率
@@ -73,4 +73,11 @@ dependencies {
     implementation project(':aspectjdemo')
 //    implementation 'com.google.android.material:material:1.1.0-alpha09'
     implementation 'com.google.android.material:material:1.0.0-rc01'
+
+
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+
+
 }

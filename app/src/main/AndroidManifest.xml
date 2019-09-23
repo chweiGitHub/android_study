@@ -4,6 +4,7 @@
 
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -45,6 +46,8 @@
         <activity android:name=".service.ServiceDemoActivity" />
         <activity android:name=".reflect.ReflectDemoActivity" />
         <activity android:name=".string.StringActivity" />
+        <activity android:name=".game.GameActivity" />
+        <activity android:name=".tablayoutviewpager.TestActivity" />
 
         <service android:name=".service.DemoService" />
     </application>
