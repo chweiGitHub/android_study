@@ -111,4 +111,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_games" />
 
+    <Button
+        android:id="@+id/btn_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toToolBarPage"
+        android:text="toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_tab_viewpager" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

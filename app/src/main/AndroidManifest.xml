@@ -49,6 +49,7 @@
         <activity android:name=".string.StringActivity" />
         <activity android:name=".game.GameActivity" />
         <activity android:name=".tablayoutviewpager.TestActivity" />
+        <activity android:name=".toolbar.ToolBarActivity" />
 
         <service android:name=".service.DemoService" />
     </application>

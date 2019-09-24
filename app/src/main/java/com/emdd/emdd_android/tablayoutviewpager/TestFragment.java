@@ -54,6 +54,11 @@ public class TestFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        unbinder.unbind();
+        super.onDestroyView();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -98,8 +103,7 @@ public class TestFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 System.out.println("onQueryTextSubmit----> " + query);
-//                searchView.clearFocus();
-                //RxKeyboardTool.hideKeyboard(getActivity(),searchView);
+                searchView.clearFocus();
                 return true;
             }
 

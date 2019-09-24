@@ -15,6 +15,7 @@ import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
 import com.emdd.emdd_android.service.ServiceDemoActivity;
 import com.emdd.emdd_android.string.StringActivity;
 import com.emdd.emdd_android.tablayoutviewpager.TestActivity;
+import com.emdd.emdd_android.toolbar.ToolBarActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void toViewPagerPage(View v) {
         startActivity(new Intent(MainActivity.this, TestActivity.class));
+    }
+    public void toToolBarPage(View v) {
+        startActivity(new Intent(MainActivity.this, ToolBarActivity.class));
     }
 
     @Override
