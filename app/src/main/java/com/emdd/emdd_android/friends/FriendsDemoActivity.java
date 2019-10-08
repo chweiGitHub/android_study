@@ -2,6 +2,8 @@ package com.emdd.emdd_android.friends;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -41,20 +43,25 @@ public class FriendsDemoActivity extends AppCompatActivity implements SwipeRefre
     private FriendCircleAdapter mFriendCircleAdapter;
     private ImageWatcher mImageWatcher;
     private EmojiPanelView mEmojiPanelView;
+    private static final String TAG = "FriendsDemoActivity";
+    RecyclerView recyclerView;
+    View titleView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
+        titleView = findViewById(R.id.view_title);
         mEmojiPanelView = findViewById(R.id.emoji_panel_view);
         mEmojiPanelView.initEmojiPanel(DataCenter.emojiDataSources);
         mSwipeRefreshLayout = findViewById(R.id.swpie_refresh_layout);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         mSwipeRefreshLayout.setOnRefreshListener(this);
 
 //        findViewById(R.id.img_back).setOnClickListener(v ->
 //                startActivity(new Intent(FriendsDemoActivity.this, EmojiPanelActivity.class)));
-
+        Log.e(TAG, "INIT ....");
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -69,6 +76,10 @@ public class FriendsDemoActivity extends AppCompatActivity implements SwipeRefre
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
+                Log.e(TAG, "滑动的距离： " + dy);
+                int distance  = getScollYDistance();
+                Log.e(TAG, "--------------------------------------------> "+distance);
+                updateTitleAlpah(distance);
             }
         });
         mImageWatcher = findViewById(R.id.image_watcher);
@@ -80,8 +91,34 @@ public class FriendsDemoActivity extends AppCompatActivity implements SwipeRefre
         mImageWatcher.setErrorImageRes(R.mipmap.error_picture);
         mImageWatcher.setOnPictureLongPressListener(this);
         mImageWatcher.setLoader(this);
+        mSwipeRefreshLayout.setSlingshotDistance(500);
+        mSwipeRefreshLayout.setDistanceToTriggerSync(500);
         Utils.showSwipeRefreshLayout(mSwipeRefreshLayout, this::asyncMakeData);
 
+    }
+
+    private double headerHeight = 200.0;
+    private void updateTitleAlpah(double distance) {
+        float alpha = 1;
+        if (distance < 30)alpha = 0.3f;
+        else if (distance >200){
+            alpha = 1;
+        } else {
+            alpha  = (float) (distance / headerHeight);
+        }
+        titleView.setAlpha(alpha);
+    }
+
+
+    public int getScollYDistance() {
+        if (recyclerView.getLayoutManager() != null && recyclerView.getLayoutManager() instanceof LinearLayoutManager) {
+            LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
+            int position = manager.findFirstVisibleItemPosition();
+            View firstVisiableChildView = manager.findViewByPosition(position);
+            int itemHeight = firstVisiableChildView.getHeight();
+            return (position) * itemHeight - firstVisiableChildView.getTop();
+        }
+        return 0;
     }
 
 
@@ -93,11 +130,11 @@ public class FriendsDemoActivity extends AppCompatActivity implements SwipeRefre
                 .subscribe((friendCircleBeans, throwable) -> {
                     Utils.hideSwipeRefreshLayout(mSwipeRefreshLayout);
                     if (friendCircleBeans != null && throwable == null) {
-                        for (int i =0;i < friendCircleBeans.size(); i++){
+                        for (int i = 0; i < friendCircleBeans.size(); i++) {
                             List<String> imgs = friendCircleBeans.get(i).getImageUrls();
                             List imageLIst = new ArrayList();
-                            if(imgs!= null&&imgs.size()>0){
-                                for (int a =0; a < imgs.size();a++){
+                            if (imgs != null && imgs.size() > 0) {
+                                for (int a = 0; a < imgs.size(); a++) {
                                     imageLIst.add("https://p2.music.126.net/LKX3NWX8bbExnB8K7ZQ9eQ==/109951163784237281.jpg?param=50y50");
                                 }
                                 friendCircleBeans.get(i).setImageUrls(imageLIst);

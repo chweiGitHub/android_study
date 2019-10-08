@@ -5,18 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
-        <include layout="@layout/include_title_bar_view" />
+
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swpie_refresh_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+             >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
@@ -25,8 +25,13 @@
                 android:background="@color/base_DCDCDC" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <include layout="@layout/include_title_bar_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true"/>
 
-    </LinearLayout>
+
+    </FrameLayout>
 
 
     <ch.ielse.view.imagewatcher.ImageWatcher
