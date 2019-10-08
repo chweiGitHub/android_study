@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity;
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
+import com.emdd.emdd_android.friends.FriendsDemoActivity;
 import com.emdd.emdd_android.game.GameActivity;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
 import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void toToolBarPage(View v) {
         startActivity(new Intent(MainActivity.this, ToolBarActivity.class));
+    }
+    public void toFriendsCirclePage(View v) {
+        startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
     }
 
     @Override
