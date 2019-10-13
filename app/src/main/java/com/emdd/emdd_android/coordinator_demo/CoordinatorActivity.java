@@ -25,10 +25,11 @@ public class CoordinatorActivity extends AppCompatActivity
         // activity_coordinator_demo
         // activity_coordinator_demo2
         // activity_coordinator_demo_3
-        setContentView(R.layout.activity_coordinator_demo_4);
+        setContentView(R.layout.activity_coordinator_demo_v2);
         recyclerView  = findViewById(R.id.recycler_view);
 
         list  = new ArrayList<>();
+
         for (int i =0; i < 30; i ++){
             list.add("item " +i);
         }

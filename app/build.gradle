@@ -108,4 +108,8 @@ dependencies {
 
 //    compile('com.github.hotchemi:permissionsdispatcher:3.1.0')
 //    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
+
+
+    implementation 'com.devzld:expandlayout:1.0.0'
+
 }
