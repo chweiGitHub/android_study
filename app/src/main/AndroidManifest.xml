@@ -50,6 +50,7 @@
         <activity android:name=".game.GameActivity" />
         <activity android:name=".tablayoutviewpager.TestActivity" />
         <activity android:name=".toolbar.ToolBarActivity" />
+        <activity android:name=".friends.FriendsDemoActivity" />
 
         <service android:name=".service.DemoService" />
     </application>

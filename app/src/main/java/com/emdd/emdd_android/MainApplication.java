@@ -3,6 +3,7 @@ package com.emdd.emdd_android;
 import android.app.Application;
 import android.content.Context;
 
+import com.emdd.friendscircle.BaseApplication;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
@@ -13,7 +14,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.vondear.rxtool.RxTool;
 
-public class MainApplication extends Application {
+public class MainApplication extends BaseApplication {
 
     //static 代码段可以防止内存泄露
     static {

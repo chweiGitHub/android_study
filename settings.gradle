@@ -1,1 +1,1 @@
-include ':app', ':annotation_lib', ':aspectjdemo'
+include ':app', ':annotation_lib', ':aspectjdemo', ':friendscircle'
