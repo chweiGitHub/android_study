@@ -29,6 +29,7 @@ public class CoordinatorActivity extends AppCompatActivity
         recyclerView  = findViewById(R.id.recycler_view);
 
         list  = new ArrayList<>();
+
         for (int i =0; i < 30; i ++){
             list.add("item " +i);
         }
