@@ -24,6 +24,7 @@ import com.emdd.friendscircle.others.FriendsCircleAdapterDivideLine;
 import com.emdd.friendscircle.others.GlideSimpleTarget;
 import com.emdd.friendscircle.utils.Utils;
 import com.emdd.friendscircle.widgets.EmojiPanelView;
+import com.vondear.rxtool.RxWebViewTool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +45,15 @@ public class FriendsDemoActivity extends AppCompatActivity implements SwipeRefre
     private ImageWatcher mImageWatcher;
     private EmojiPanelView mEmojiPanelView;
     private static final String TAG = "FriendsDemoActivity";
-    RecyclerView recyclerView;
-    View titleView;
+    private RecyclerView recyclerView;
+    private View titleView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_friends);
         titleView = findViewById(R.id.view_title);
         mEmojiPanelView = findViewById(R.id.emoji_panel_view);

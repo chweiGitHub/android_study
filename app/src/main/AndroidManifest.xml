@@ -51,6 +51,7 @@
         <activity android:name=".tablayoutviewpager.TestActivity" />
         <activity android:name=".toolbar.ToolBarActivity" />
         <activity android:name=".friends.FriendsDemoActivity" />
+        <activity android:name=".webview.WebViewActivity" />
 
         <service android:name=".service.DemoService" />
     </application>

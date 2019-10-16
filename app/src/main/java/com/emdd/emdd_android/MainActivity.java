@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
     }
 
+
+    public void toWebViewPage(View v) {
+        startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println(" getTheme().toString(): "+ getTheme().toString());
