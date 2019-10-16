@@ -131,4 +131,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_toolbar" />
 
+    <Button
+        android:id="@+id/friends_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toFriendsSimplePage"
+        android:text="friends-simple"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_toolbar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

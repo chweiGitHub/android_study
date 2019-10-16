@@ -72,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
     public void toWebViewPage(View v) {
         startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
     }
+    public void toFriendsSimplePage(View v) {
+        startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
