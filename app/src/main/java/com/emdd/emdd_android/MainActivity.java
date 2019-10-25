@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.emdd.emdd_android.contact.ContactActivity;
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity;
 import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
 import com.emdd.emdd_android.friends.FriendsDemoActivity;
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, FriendsDemoActivity.class));
     }
 
+    public void toContactList (View v ){
+        startActivity(new Intent(MainActivity.this, ContactActivity.class));
+    }
 
 
 
