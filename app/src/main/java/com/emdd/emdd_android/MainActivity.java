@@ -13,6 +13,7 @@ import com.emdd.emdd_android.coordinator_demo.CoordinatorActivity2;
 import com.emdd.emdd_android.friends.FriendsDemoActivity;
 import com.emdd.emdd_android.game.GameActivity;
 import com.emdd.emdd_android.mvvm.DataBindDemoActivity;
+import com.emdd.emdd_android.search.SearchActivity1;
 import com.emdd.emdd_android.section_demo.AspectjDemoActivity;
 import com.emdd.emdd_android.service.ServiceDemoActivity;
 import com.emdd.emdd_android.string.StringActivity;
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void toContactList (View v ){
         startActivity(new Intent(MainActivity.this, ContactActivity.class));
+    }
+    public void toSearchPage (View v ){
+        startActivity(new Intent(MainActivity.this, SearchActivity1.class));
     }
 
 

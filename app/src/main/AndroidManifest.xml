@@ -55,6 +55,8 @@
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".friends_simple.FriendsSimpleActivity" />
         <activity android:name=".contact.ContactActivity" />
+        <activity android:name=".search.SearchActivity" />
+        <activity android:name=".search.SearchActivity1" />
 
         <service android:name=".service.DemoService" />
     </application>
